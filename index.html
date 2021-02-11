@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ToDo-List</title>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="main-content">
+            <div class="header">
+                <h2 id="day-today">Day</h2>
+                <p id="date-today">Date Today</p>
+            </div>
+            <hr>
+            <div class="list-container">
+                <input type="text" id="dataInput"><button type="button">Add</button><br><br>
+                <ul class="todo-list">
+                    <li>
+                        <label for="to-do01">
+                            <span>Open browser</span>
+                            <input id="to-do01" type="checkbox">
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        var dt = new Date();
+        let date = document.getElementById("date-today");
+        var dayList = ["Sunday","Monday","Tuesday","Thursday","Friday","Saturday"];
+        let day = document.getElementById("day-today");
+
+        date.innerHTML = (("0"+(dt.getMonth()+1)).slice(-2)) +"/"+ (("0"+dt.getDate()).slice(-2)) +"/"+ (dt.getFullYear());
+        day.innerHTML = dayList[dt.getDay()-1];
+    </script>
+</body>
+</html>
